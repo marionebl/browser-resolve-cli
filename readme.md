@@ -22,7 +22,19 @@ npm install browser-resolve-cli
 ## Usage
 
 ```
-browser-resolve --help
+❯ node cli.js --help
+
+  Command line interface for node-browser-resolve
+
+  Usage
+  	$ browser-resolve [options] <input>
+
+  Options
+  	-b, --browser           Property to use from package.json for lookups, defaults to browser
+  	-d, --basedir           Directory to resolve from, defaults to CWD
+  	-e, --extensions        Extensions to search in order, repeat for mulitple paths
+  	-m, --module-directory  Directories to use for module lookups, defaults to node_modules, repeat for multiple directories
+  	-p, --paths             Paths to search if nothing is found in modules directory, repeat for multiple paths
 ```
 
 ---
