@@ -6,8 +6,12 @@ environment:
 install:
   - ps: Install-Product node $env:nodejs_version
   - npm install
+  - npm prune
 
 test_script:
   - npm test
 
-build: odff
+build: off
+
+cache:
+  - node_modules
