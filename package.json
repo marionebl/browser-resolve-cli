@@ -4,7 +4,7 @@
   "description": "Command line interface for node-browser-resolve",
   "main": "index.js",
   "bin": {
-    "browser-resolve-cli": "cli.js"
+    "browser-resolve": "cli.js"
   },
   "scripts": {
     "changelog": "conventional-changelog -i changelog.md -s -r0",
