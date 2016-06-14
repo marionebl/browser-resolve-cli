@@ -7,10 +7,17 @@
     "browser-resolve-cli": "cli.js"
   },
   "scripts": {
+    "changelog": "conventional-changelog -i changelog.md -s -r0",
     "lint": "xo",
-    "start": "npm run watch",
+    "postversion": "npm run version:commit && npm run version:retag",
+    "preversion": "npm run lint && npm run test",
     "pretest": "npm run lint",
+    "release": "npm version $(conventional-recommended-bump -p angular)",
+    "start": "npm run watch",
     "test": "ava",
+    "version": "npm run changelog && git add .",
+    "version:commit": "git commit -m \"chore(release): v$npm_package_version\n$(conventional-changelog)\"",
+    "version:retag": "git tag -d v$npm_package_version && git tag -a v$npm_package_version -m \"$(conventional-changelog)\"",
     "watch": "npm test -- --watch"
   },
   "ava": {
@@ -54,6 +61,8 @@
     "unexpected": "^10.13.3"
   },
   "devDependencies": {
+    "@marionebl/conventional-changelog-cli": "^1.2.0",
+    "@marionebl/conventional-recommended-bump": "^0.2.1",
     "ava": "^0.15.2",
     "babel": "^6.5.2",
     "babel-preset-es2015-node4": "^2.1.0",
