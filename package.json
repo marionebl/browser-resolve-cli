@@ -1,0 +1,68 @@
+{
+  "name": "browser-resolve-cli",
+  "version": "1.0.0",
+  "description": "Command line interface for node-browser-resolve",
+  "main": "index.js",
+  "bin": {
+    "browser-resolve-cli": "cli.js"
+  },
+  "scripts": {
+    "lint": "xo",
+    "start": "npm run watch",
+    "pretest": "npm run lint",
+    "test": "ava",
+    "watch": "npm test -- --watch"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "babel": {
+    "presets": [
+      "es2015-node4",
+      "es2016-node4",
+      "stage-0-kneden"
+    ]
+  },
+  "repository": "marionebl/browser-resolve-cli",
+  "keywords": [
+    "browserify",
+    "resolve",
+    "cli",
+    "browser-resolve"
+  ],
+  "author": {
+    "name": "Mario Nebl",
+    "email": "hello@herebecode.com",
+    "url": "github.com/marionebl"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marionebl/browser-resolve-cli/issues"
+  },
+  "homepage": "https://github.com/marionebl/browser-resolve-cli#readme",
+  "engines": {
+    "node": ">= 4"
+  },
+  "dependencies": {
+    "browser-resolve": "^1.11.2",
+    "denodeify": "^1.2.1",
+    "lodash": "^4.13.1",
+    "meow": "^3.7.0",
+    "unexpected": "^10.13.3"
+  },
+  "devDependencies": {
+    "ava": "^0.15.2",
+    "babel": "^6.5.2",
+    "execa": "^0.4.0",
+    "xo": "^0.15.1"
+  },
+  "xo": {
+    "esnext": true,
+    "envs": [
+      "node"
+    ]
+  }
+}

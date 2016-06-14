@@ -1,0 +1,6 @@
+{
+  "name": "browser-package",
+  "main": "index",
+  "jsnext:main": "index",
+  "browser": "browser"
+}
