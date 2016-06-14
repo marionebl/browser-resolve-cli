@@ -5,8 +5,12 @@ environment:
     
 install:
   - ps: Install-Product node $env:nodejs_version
+  - node -v
+  - npm install -g npm@3
+  - npm -v
   - npm install
   - npm prune
+  - npm ls
 
 test_script:
   - npm test
